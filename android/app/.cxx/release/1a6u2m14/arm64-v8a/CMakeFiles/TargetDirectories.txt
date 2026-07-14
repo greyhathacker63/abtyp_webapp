@@ -1,0 +1,2 @@
+D:/ARYAN/abtyp/abtypd/android/app/.cxx/release/1a6u2m14/arm64-v8a/CMakeFiles/edit_cache.dir
+D:/ARYAN/abtyp/abtypd/android/app/.cxx/release/1a6u2m14/arm64-v8a/CMakeFiles/rebuild_cache.dir

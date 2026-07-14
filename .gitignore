@@ -1,0 +1,10 @@
+/.dart_tool/
+/.idea/
+/.packages
+/.pub/
+/build/
+/pubspec.lock
+android/.gradle/
+android/local.properties
+android/app/build/
+ios/Flutter/.last_build_id

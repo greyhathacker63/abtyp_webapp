@@ -1,0 +1,41 @@
+name: abtyp_parishad
+description: Flutter wrapper app for parishad.abtyp.org
+publish_to: "none"
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.4.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  flutter_inappwebview: ^6.1.5
+  flutter_file_downloader: ^2.1.1
+  permission_handler: ^11.3.1
+  device_info_plus: ^10.1.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+  flutter_launcher_icons: ^0.14.4
+  flutter_native_splash: ^2.4.6
+
+flutter_launcher_icons:
+  android: true
+  ios: false
+  image_path: "assets/images/TYP-red.png"
+
+flutter_native_splash:
+  color: "#ffffff"
+  image: assets/images/TYP-red.png
+  android: true
+  ios: false
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/TYP-red.png
