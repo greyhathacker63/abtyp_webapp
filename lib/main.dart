@@ -8,6 +8,7 @@ import 'package:device_info_plus/device_info_plus.dart';
 
 import 'web_redirect_stub.dart'
     if (dart.library.html) 'web_redirect_web.dart';
+import 'web_utils.dart';
 
 const _initialUrl = 'https://parishad.abtyp.org/';
 const _browserUserAgent =
@@ -70,18 +71,11 @@ class _ParishadWebViewPageState extends State<ParishadWebViewPage> {
       _pullToRefreshController = PullToRefreshController(
         settings: PullToRefreshSettings(color: const Color(0xFF8A1538)),
         onRefresh: () async {
-          final controller = _controller;
-          if (controller == null) {
+          if (_controller == null) {
             _pullToRefreshController?.endRefreshing();
             return;
           }
-
-          final url = await controller.getUrl();
-          if (url != null) {
-            await controller.loadUrl(urlRequest: URLRequest(url: url));
-          } else {
-            await controller.reload();
-          }
+          await reloadWebView(_controller);
         },
       );
     }
