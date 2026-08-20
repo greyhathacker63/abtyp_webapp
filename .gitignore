@@ -8,3 +8,8 @@ android/.gradle/
 android/local.properties
 android/app/build/
 ios/Flutter/.last_build_id
+
+# App signing keys
+**/key.properties
+**/*.jks
+**/upload-keystore.jks

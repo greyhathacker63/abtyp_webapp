@@ -6,8 +6,7 @@ import 'package:flutter_file_downloader/flutter_file_downloader.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:device_info_plus/device_info_plus.dart';
 
-import 'web_redirect_stub.dart'
-    if (dart.library.html) 'web_redirect_web.dart';
+import 'web_redirect_stub.dart' if (dart.library.html) 'web_redirect_web.dart';
 import 'web_utils.dart';
 
 const _initialUrl = 'https://parishad.abtyp.org/';
@@ -40,7 +39,7 @@ class ParishadApp extends StatelessWidget {
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'ABTYP Parishad',
+      title: 'ABTYP PARISHAD',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF8A1538)),
         useMaterial3: true,
@@ -105,6 +104,7 @@ class _ParishadWebViewPageState extends State<ParishadWebViewPage> {
         }
       },
       child: Scaffold(
+        backgroundColor: Colors.white,
         body: SafeArea(
           child: Stack(
             children: [
@@ -156,7 +156,8 @@ class _ParishadWebViewPageState extends State<ParishadWebViewPage> {
                     action: PermissionResponseAction.GRANT,
                   );
                 },
-                onDownloadStartRequest: (controller, downloadStartRequest) async {
+                onDownloadStartRequest:
+                    (controller, downloadStartRequest) async {
                   final url = downloadStartRequest.url.toString();
                   final name = downloadStartRequest.suggestedFilename;
 
@@ -182,7 +183,8 @@ class _ParishadWebViewPageState extends State<ParishadWebViewPage> {
                       if (mounted) {
                         ScaffoldMessenger.of(context).showSnackBar(
                           const SnackBar(
-                            content: Text('Storage permission is required to download files.'),
+                            content: Text(
+                                'Storage permission is required to download files.'),
                             backgroundColor: Colors.red,
                           ),
                         );
@@ -197,7 +199,8 @@ class _ParishadWebViewPageState extends State<ParishadWebViewPage> {
                         if (mounted) {
                           ScaffoldMessenger.of(context).showSnackBar(
                             SnackBar(
-                              content: Text('Downloaded successfully: ${name ?? "file"}'),
+                              content: Text(
+                                  'Downloaded successfully: ${name ?? "file"}'),
                               backgroundColor: Colors.green,
                               duration: const Duration(seconds: 4),
                             ),
@@ -266,7 +269,7 @@ class _WebRedirectPageState extends State<WebRedirectPage> {
               const CircularProgressIndicator(),
               const SizedBox(height: 16),
               const Text(
-                'Opening ABTYP Parishad in your browser...',
+                'Opening ABTYP PARISHAD in your browser...',
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: 12),
